@@ -1,0 +1,14 @@
+uuid: 535a34b2-1936-467e-99d0-84527434c068
+name: 'Drupal 8 formation développeur'
+mail: foo@bar.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

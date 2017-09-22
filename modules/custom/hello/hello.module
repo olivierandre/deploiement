@@ -1,0 +1,44 @@
+<?php
+
+function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch($route_name) {
+    // Main module help for the block module.
+    case 'help.page.block':
+      return 'Hello help';
+
+    // Help for another path in the block module.
+    case 'block.admin_display':
+      return 'Hello help';
+  }
+}
+
+function hello_user_login($account) {
+  // drupal_set_message(t('Hello ').$account->getDisplayName(), 'status');
+  drupal_set_message(t('Hello %name', array('%name' => $account->getDisplayName())));
+}
+
+function hello_cron() {
+  drupal_set_message(t('Hello cron'), 'status');
+}
+
+function hello_node_update($node) {
+  $user = \Drupal::currentUser();
+  $database = \Drupal::database();
+
+  $database->insert('hello_node_history')
+    ->fields([
+      'nid' => $node->id(),
+      'uid' => $user->id(),
+      'update_time' => time(),
+    ])
+    ->execute();
+}
+
+function hello_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'hello/hello';
+}
+
+function hello_preprocess_block(array &$variables) {
+  $class = \Drupal::config('hello.config')->get('color');
+  $variables['attributes']['class'][] = $class;
+}

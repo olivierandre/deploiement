@@ -1,0 +1,48 @@
+hello.hello:
+  path: "/hello/{param}"
+  defaults:
+    _title: 'Hello'
+    _controller: '\Drupal\hello\Controller\HelloController::content'
+    param: ''
+  requirements:
+    _access: 'TRUE'
+
+hello.hello.json:
+  path: '/hellojson'
+  defaults:
+    _title: 'Hello JSON'
+    _controller: '\Drupal\hello\Controller\HelloJsonController::content'
+  requirements:
+    _access: 'TRUE'
+
+hello.hello.list:
+  path: '/hellolist'
+  defaults:
+    _title: 'Hello list'
+    _controller: '\Drupal\hello\Controller\HelloListController::content'
+  requirements:
+    _access: 'TRUE'
+
+hello.hello.table:
+  path: '/node/{node}/history'
+  defaults:
+    _title: 'Hello table'
+    _controller: '\Drupal\hello\Controller\HelloTableController::content'
+  requirements:
+    _access: 'TRUE'
+
+hello.form:
+  path: '/hello-form'
+  defaults:
+    _title: 'Hello form'
+    _form: '\Drupal\hello\Form\HelloForm'
+  requirements:
+    _access: 'TRUE'
+
+hello.config:
+  path: '/admin/appearance/block_color'
+  defaults:
+    _title: 'Block color'
+    _form: '\Drupal\hello\Form\ConfigForm'
+  requirements:
+    _access: 'TRUE'

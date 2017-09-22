@@ -1,0 +1,7 @@
+name: 'Hello'
+type: module
+description: 'Hello formation développeur D8'
+package: 'Formation D8'
+
+version: '0.1'
+core: '8.x'

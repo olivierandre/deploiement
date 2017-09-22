@@ -1,0 +1,5 @@
+hello.node.node_history:
+  route_name: hello.hello.table
+  base_route: entity.node.canonical
+  title: Update hello_node_history
+  weight: 5
